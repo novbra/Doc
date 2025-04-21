@@ -40,6 +40,8 @@
 - 缩进来区分代码行而非分号，也可以写分号但Python的生态里不必写
 - 无须指明变量类型，可直接赋值，可自动识别类型
 - 没有double. **Python中float可表示双精度浮点数**
+- bool类型中取值**True和False都是第一个字母需要大写**
+- 字符串操作可拼接+法，也可乘法即复制多少个字符串
 
 ### 类型
 
@@ -103,6 +105,8 @@
 
 >与C++、Java不同，无须指明变量类型，可自动识别类型
 >
+>in
+>
 >```python
 >tang=3
 >tang
@@ -112,6 +116,34 @@
 >
 >```python
 >3
+>```
+>
+>in
+>
+>```python
+>b=True
+>b
+>```
+>
+>out
+>
+>```python
+>True
+>```
+
+### 比较
+
+>in
+>
+>```python
+>a=3
+>1<a<5
+>```
+>
+>out
+>
+>```python
+>True
 >```
 
 ### 取变量类型type()
@@ -156,3 +188,273 @@
 - **
 - */%
 - +-
+
+### 基本数值操作
+
+- abs()取绝对值
+
+- round()四舍五入
+
+- min()多数取最小值
+
+  >in
+  >
+  >```python
+  >min(2,3,4,5)
+  >```
+  >
+  >out
+  >
+  >```python
+  >2
+  >```
+
+- max()多数取最大值
+
+  >in
+  >
+  >```python
+  >max(2,3,4,5)
+  >```
+  >
+  >out
+  >
+  >```python
+  >5
+  >```
+
+- 科学计数法 e就相当于10的多少次幂
+
+  >in
+  >
+  >```python
+  >1.3e-5
+  >```
+  >
+  >out
+  >
+  >```python
+  >1.3e-05
+  >```
+
+  >in
+  >
+  >```python
+  >1.3e5
+  >```
+  >
+  >out
+  >
+  >```python
+  >130000.0
+  >```
+
+- 16进制
+
+  >in
+  >
+  >```python
+  >0xff
+  >```
+  >
+  >out
+  >
+  >```python
+  >255
+  >```
+
+
+
+
+
+# 字符串操作
+
+### 拼接+
+
+>in
+>
+>```python
+>tang='hello'+'python'
+>tang
+>```
+>
+>out
+>
+>```python
+>'hellopython'
+>```
+
+### 乘法*倍数拼接
+
+>in
+>
+>```python
+>tang*3
+>```
+>
+>out
+>
+>```python
+>'hellopythonhellopythonhellopython'
+>```
+
+### len() 取字符串长度
+
+>in
+>
+>```python
+>len(tang)
+>```
+>
+>out
+>
+>```python
+>11
+>```
+
+### str.split()分割字符串
+
+>默认情况，以空格为分割符
+>
+>in
+>
+>```python
+>tang='1 2 3 4 5'
+>tang.split()
+>```
+>
+>out
+>
+>```python
+>['1','2','3','4','5']
+>```
+
+>不以空格为分隔符
+>
+>in
+>
+>```python
+>tang='1,2,3,4,5'
+>tang=tang.split(',')
+>tang
+>```
+>
+>out
+>
+>```python
+>['1','2','3','4','5']
+>```
+>
+>上面的结果其实是字符串数组，可以使用下面join函数重新拼回去
+
+### str.join(iterable) 字符拼接器-join函数
+
+>用于可将可迭代对象（如列表、元组等）中的元素连接成一个字符串。它的作用是将多个字符串按照==指定的分隔符==拼接在一起
+>
+>**但可迭代对象的元素必须是字符串**
+
+>in
+>
+>```python
+>words=['Hello','World','Python']
+>result=' '.join(words) # 用空格键连接
+>print(result)
+>```
+>
+>out
+>
+>```python
+>Hello World Python
+>```
+>
+>in
+>
+>```python
+>words=['2023','10','15']
+>result='-'.join(words) # 用'-'连接
+>print(result)
+>```
+>
+>out
+>
+>```python
+>2023-10-15
+>```
+>
+>连接元组中的元素
+>
+>in
+>
+>```python
+>letters=('a','b','c')
+>result=''.join(letters) # 无分隔符
+>print(result)
+>```
+>
+>out
+>
+>```python
+>abc
+>```
+>
+>连接集合中的元素
+>
+>in
+>
+>```python
+>chars={'x','y','z'}
+>result=','.join(chars) # 用 ','连接
+>print(result)
+>```
+>
+>out
+>
+>```python
+>x,y,z
+>```
+
+### str.replace 替换
+
+>in
+>
+>```python
+>tang='hello python'
+>tang2=tang.replace('python','world')
+>tang2
+>```
+>
+>out
+>
+>```python
+>'hello world'
+>```
+
+### str.upper()转换为大写
+
+>in
+>
+>```python
+>tang2.upper()
+>```
+>
+>out
+>
+>```python
+>'HELLO WORLD'
+>```
+
+### str.lower()转换为小写
+
+>in
+>
+>```python
+>tang2='HELLO WORLD'
+>tang2.lower()
+>```
+>
+>out
+>
+>```python
+>'hello world'
+>```
+
