@@ -458,3 +458,232 @@
 >'hello world'
 >```
 
+### str.strip() 去除空格
+
+>in
+>
+>```python
+>tang='     hello python   '
+>tang.strip()
+>```
+>
+>out
+>
+>```python
+>'hello python'
+>```
+
+### str.lstrip() 去除左边空格
+
+>in
+>
+>```python
+>tang='     hello python   '
+>tang.lstrip()
+>```
+>
+>out
+>
+>```python
+>'hello python   '
+>```
+
+### str.rstrip() 去除右边空格
+
+>同理
+
+### 格式化打印
+
+>不改变位置格式打印
+>
+>in
+>
+>```python
+>'{} {} {}'.format('tang','yu','di')
+>```
+>
+>out
+>
+>```python
+>'tang yu di'
+>```
+
+>改变位置格式打印
+>
+>in
+>
+>```python
+>'{2} {1} {0}'.format('tang','yu','di')
+>```
+>
+>out
+>
+>```python
+>'di yu tang'
+>```
+
+>指定参数格式打印
+>
+>in
+>
+>```python
+>'{tang} {yu} {di}'.format(tang=10,yu=5,di=1)
+>```
+>
+>out
+>
+>```python
+>'10 5 1'
+>```
+
+# 索引
+
+>同Java, 0是第一个
+>不同点是可以倒着数，-1表示最后一个
+>
+>也可以取多个，即==切片==，如0:4，表示从0取到3（**左闭右开**，不包含4）
+>@记忆 **哪边不写代表哪边通杀**
+>
+>@易错点 左闭右开，[0:-1]并不是全取，而是取第0个到倒数第二个，倒数第一个是不包含在内的。
+>
+>同理 [0:-2]倒数第一个和倒数第二个都是不包含在内的
+
+>in
+>
+>```python
+>tang='tang yu di'
+>tang[0]
+>```
+>
+>out
+>
+>```python
+>'t'
+>```
+>
+>in
+>
+>```python
+>tang[5]
+>```
+>
+>out
+>
+>```python
+>'y'
+>```
+>
+>in
+>
+>```python
+>tang[-1]
+>```
+>
+>out
+>
+>```python
+>'i'
+>```
+>
+>in
+>
+>```python
+>tang[-5]
+>```
+>
+>out
+>
+>```python
+>'y'
+>```
+>
+>切片
+>
+>in
+>
+>```python
+>tang[0:4]
+>```
+>
+>out
+>
+>```python
+>'tang'
+>```
+>
+>in
+>
+>```python
+>tang[5:]
+>```
+>
+>out
+>
+>```python
+>'yu di'
+>```
+>
+>in
+>
+>```python
+>tang[:7]
+>```
+>
+>out
+>
+>```python
+>'tang yu'
+>```
+>
+>in
+>
+>```python
+>tang[1:-2]
+>```
+>
+>out
+>
+>```python
+>'ang yu '
+>```
+>
+>in
+>
+>```python
+>tang[-3:]
+>```
+>
+>out
+>
+>```python
+>' di'
+>```
+>
+>in
+>
+>```python
+>tang[:]
+>```
+>
+>out
+>
+>```python
+>'tang yu di'
+>```
+>
+>in
+>
+>```python
+>tang[::2] #步长为2，即从0,2,4,6,8这样取，直观点来说就是隔一个
+>```
+>
+>out
+>
+>```python
+>'tn ud'
+>```
+
+>超出最大索引值，会报IndexError：string index out of range
+
+# List
+
